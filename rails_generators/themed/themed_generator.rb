@@ -1,6 +1,7 @@
 class ThemedGenerator < Rails::Generator::NamedBase
   
-  default_options :themed_type => :crud,
+  default_options :app_name => 'Web App',
+                  :themed_type => :crud,
                   :layout => false,
                   :will_paginate => false
   
@@ -32,7 +33,7 @@ class ThemedGenerator < Rails::Generator::NamedBase
     @resource_name        = @model_name.downcase 
     # posts
     @plural_resource_name = @resource_name.pluralize                
-    
+
     manifest_method = "manifest_for_#{options[:themed_type]}"    
     record do |m|
       send(manifest_method, m) if respond_to?(manifest_method)
@@ -60,7 +61,7 @@ protected
   
   def manifest_for_restful_authentication(m)
     signup_controller_path  = @controller_file_path
-    signin_controller_path  = @model_name # just here I use the second argument as a controller path
+    signin_controller_path  = @model_name.downcase # just here I use the second argument as a controller path
     @resource_name          = @controller_path.singularize
     m.template('view_signup.html.erb',  File.join("app/views", signup_controller_path, "new.html.erb"))
     m.template('view_signin.html.erb',  File.join("app/views", signin_controller_path, "new.html.erb"))
@@ -78,6 +79,7 @@ protected
   def add_options!(opt)
     opt.separator ''
     opt.separator 'Options:'
+    opt.on("--app_name=app_name", String, "") { |v| options[:app_name] = v }
     opt.on("--type=themed_type", String, "") { |v| options[:themed_type] = v }    
     opt.on("--layout=layout", String, "Add menu link") { |v| options[:layout] = v }    
     opt.on("--with_will_paginate", "Add pagination using will_paginate") { |v| options[:will_paginate] = true }
