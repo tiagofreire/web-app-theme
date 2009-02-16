@@ -263,14 +263,33 @@ ul.list li .item .avatar {
   background: #FFFFFF url(http://rubyinsidebrasil.basecamphq.com/images/right-bg.gif) repeat-y scroll right center;
 }
 
-#main .block .content h2 {
+#main .block .content .page_header {
 	background: #EDF3FE none repeat scroll 0 0;
 	color: #000000;
 	font-family: "Lucida Grande",verdana,arial,helvetica,sans-serif;
 	font-size: 14px;
 	font-weight: bold;
 	margin: 0 8px 5px 0;
-	padding: 13px 10px 13px 24px;
+	padding: 13px 30px 13px 24px;
+}
+
+#main .block .content .page_header .page_header_links {
+	width: 350px;
+	color: #CCCCCC;
+	float: right;
+	font-size: 11px;
+	line-height: 20px;
+	margin-top: 0;
+	text-align: right;
+}
+
+#main .block .content .page_header .page_header_links a {
+	color: #FF0000;
+}
+
+#main .block .content .page_header .page_header_links a:hover {
+	background: #FF0000 none repeat scroll 0 0;
+	color: #FFFFFF;
 }
 
 #main .bottom {
