@@ -260,7 +260,7 @@ ul.list li .item .avatar {
 /* BASECAMP STYLE */
 
 #main .block .content {
-  background: #FFFFFF url(http://rubyinsidebrasil.basecamphq.com/images/right-bg.gif) repeat-y scroll right center;
+  background: #FFFFFF url(/images/right-bg.gif) repeat-y scroll right center;
 }
 
 #main .block .content .page_header {
@@ -293,7 +293,7 @@ ul.list li .item .avatar {
 }
 
 #main .bottom {
-	background:transparent url(http://rubyinsidebrasil.basecamphq.com/images/bottom-bg.gif) no-repeat scroll right top;
+	background:transparent url(/images/bottom-bg.gif) no-repeat scroll right top;
 	font-size:8px;
 }
 
